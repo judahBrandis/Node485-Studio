@@ -1,13 +1,16 @@
 #include "raylib.h"
+#include "judahUI.h"
 
 // home page, 2D view, 3D view, analysis view
 enum {HOME, D2, D3, ANALYSIS}; 
+
+int detectModules = 0;
 
 int main (void) {
     SetConfigFlags(FLAG_WINDOW_RESIZABLE); // makes it so that the window can be stretched 
 
     // Create window the same size as screen
-    InitWindow(800, 450, "Node485 - v0.1");
+    InitWindow(800, 450, "Node485 - v0.11");
     SetExitKey(KEY_NULL); // Disables ESC closing the window
 
     // set FPS
@@ -23,10 +26,9 @@ int main (void) {
         // Draw background
         BeginDrawing();
             ClearBackground(RAYWHITE);
-            DrawRectangle(0, 0, screenWidth, 0.1 * screenHeight, LIGHTGRAY);
+            DrawRectangle(0, 0, screenWidth, 0.05 * screenHeight, LIGHTGRAY);
 
-            // DrawText("Congrats! You created your first window!", 190, 200, 20, LIGHTGRAY);
-
+            createButton(0.01, 0.5, 0.15, BLACK, LIGHTGRAY, "My Button");
         EndDrawing();
     }
 
